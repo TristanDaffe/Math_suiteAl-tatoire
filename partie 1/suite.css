@@ -46,7 +46,7 @@ input{
 /* style pour le tableau + div pour scroll */
 .scrollTable{
     overflow: scroll;
-    height: 500px;
+    max-height: 500px;
     padding: 0px 10px;
     scrollbar-color: rebeccapurple transparent;
     scrollbar-width: thin;

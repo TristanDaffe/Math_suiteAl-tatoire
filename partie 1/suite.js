@@ -150,7 +150,7 @@ function generateFrequenceTable(taille){
         // colonne n * pi et (n * pi - ri)² / (n * pi)
         frequence.forEach(x => {
             x["nPi"] = x["Pi"] * taille;
-            x["(nPi - Ri)² / nPi"] = Math.pow(x["nPi"] - x["Ri"], 2) / x["nPi"];
+            x["(Ri - nPi)² / nPi"] = Math.pow(x["Ri"] - x["nPi"], 2) / x["nPi"];
         });
         return frequence;
 }
@@ -180,7 +180,7 @@ function testSeries(){
     }
     serie.forEach(x => {
         x["nPi"] = x["Pi"] * suite.length;
-        x["(nPi - Ri)² / nPi"] = Math.pow(x["nPi"] - x["Ri"], 2) / x["nPi"];
+        x["(Ri - nPi)² / nPi"] = Math.pow(x["nPi"] - x["Ri"], 2) / x["nPi"];
     });
 
     serie = serie.filter(x => x["Ri"] !== 0);
@@ -238,7 +238,7 @@ function testSauts(){
     }
     sauts.forEach(x => {
         x["nPi"] = x["Pi"] * suite.length;
-        x["(nPi - Ri)² / nPi"] = Math.pow(x["nPi"] - x["Ri"], 2) / x["nPi"];
+        x["(Ri - nPi)² / nPi"] = Math.pow(x["nPi"] - x["Ri"], 2) / x["nPi"];
     });
 
     validityTest.innerHTML = "Test des Sauts : ";
@@ -247,6 +247,7 @@ function testSauts(){
 
 function testCourse(){
     let course = [];
+    let totaux = [];
 
     // prépare course pour compter la taille des courses
     for(let i = 1; i < suite.length; i++){
@@ -272,11 +273,71 @@ function testCourse(){
     }
     course.forEach(x => {
         x["nPi"] = x["Pi"] * suite.length;
-        x["(nPi - Ri)² / nPi"] = Math.pow(x["nPi"] - x["Ri"], 2) / x["nPi"];
+        x["(Ri - nPi)² / nPi"] = Math.pow(x["Ri"] - x["nPi"], 2) / x["nPi"];
     });
-    course = course.filter(x => x["Ri"] !== 0);
+    //course = course.filter(x => x["Ri"] !== 0);
+
+    totaux = {
+        "Course": "Total",
+        "Ri": "",
+        "Pi": "",
+        "nPi": "",
+        "(Ri - nPi)² / nPi": 0
+    };
+    course.forEach(x => {
+        totaux["(Ri - nPi)² / nPi"] += x["(Ri - nPi)² / nPi"];
+    });
+    course.push(totaux);
 
     validityTest.innerHTML = "Test de course : ";
+    //affichage des étapes
+    validityTest.innerHTML += "<h2>Étape 1: </h2>";
+    validityTest.innerHTML += "<p>H0: la suite est acceptable </p>";
+    validityTest.innerHTML += "<p>H1: la suite n'est pas acceptable </p>";
+
+    validityTest.innerHTML += "<h2>Étape 2: </h2>";
+    validityTest.innerHTML += "<p>𝛼 = 5%</p>";
+
+    validityTest.innerHTML += "<h2>Étape 3: </h2>";
     validityTest.innerHTML += createTalbe(course, "courseTable");
+
+    validityTest.innerHTML += "<h2>Étape 4: </h2>";
+    //regroupement des valeurs où nPi est inférieur à 5
+    let courseRegrouped = course;
+
+    let regroupeDepuis = courseRegrouped.length-1;
+    for(let i = courseRegrouped.length-2; i !== 1; i--){
+        if(courseRegrouped[i]["nPi"] < 5){
+            courseRegrouped[i-1]["Ri"] += courseRegrouped[i]["Ri"];
+            courseRegrouped[i-1]["nPi"] += courseRegrouped[i]["nPi"];
+            courseRegrouped[i-1]["Course"] = i +" - " + regroupeDepuis;
+            
+            courseRegrouped.splice(i, 1);
+        }
+        else {
+            regroupeDepuis = i;
+        }
+    }
+    let totauxRegroupe = {
+        "Course": "Total",
+        "Ri": "",
+        "Pi": "",
+        "nPi": "",
+        "(Ri - nPi)² / nPi": 0
+    };    
+    courseRegrouped.forEach(x => {
+        totauxRegroupe["(Ri - nPi)² / nPi"] += x["(Ri - nPi)² / nPi"];
+    });
+
+    validityTest.innerHTML += createTalbe(courseRegrouped, "courseTable");
+
+    validityTest.innerHTML += "<h2>Étape 5: </h2>";
+    validityTest.innerHTML += `<p>Degrés de liberté :  ${courseRegrouped.length - 1}</p>`;
+
+    validityTest.innerHTML += "<h2>Étape 6: </h2>";
+    validityTest.innerHTML += `<p>Décision : comparé ${courseRegrouped[courseRegrouped.length-1]["(Ri - nPi)² / nPi"]}
+                               <br> à la valeur dans le tableau avec un indice de liberté de ${courseRegrouped.length - 1}</p>`;
+
 }
+
 // reste test du poker et test du carré unité
