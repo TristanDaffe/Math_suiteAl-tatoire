@@ -1,0 +1,303 @@
+// En MC : 
+//  - Tableau reprenant les valeurs générées via la loi de Poisson 
+//  - p(0) = 0,183
+//  - p(1) = 0,494
+//  - p(2) = 0,758
+//  - p(3) = 0,908
+//  - p(4) = 0,9716
+//  - p(5) = 0,99932
+//  - p(6) = 0,99932
+//  - p(7) = 1,00081
+
+// couts présence dans le système
+COUT_1H_ORDINAIRE = 25
+COUT_1H_PRIORITAIRE = 40
+
+// cout occupation dans station
+COUT_1H_STATION_PRIORITÈRE = 75
+COUT_1H_STATION_ORDINAIRE = 50
+COUT_1H_STATION_INOCCUPÉE = 20
+
+COUT_TRANSFORMATION_CLIENT_PRIO_VERS_ORDINAIRE = 30
+MAX_PRIORITAIRE_FILE = 5
+
+TAUX_PRIORITAIRE = 0.3
+// tableau en valeur cumulée
+tabPoisson = [0.183, 0.494, 0.758, 0.908, 0.9716,  0.9932,  0.99932, 1.00081]
+
+module(nbStationsOptimal;nbStationsMin, nbStationsMax, tempsSimul;nbStationsOptimal)
+---*
+nbStations = nbStationsMin
+while (nbStations ≤ nbStationsMax)
+  file = 0
+  filePrioritaire = 0
+  fileCumulée = 0
+  filePrioCumulée = 0
+  nbTransfoClientTot = 0
+  tempsInnocupéTot = 0
+
+module(initStations;nbStations;stations)
+  temps = 1
+
+  while (temps <= tempsSimul)
+// affichage des états de chaque stations pour les 20 premières minutes du nombre de station min
+if( temps <= 20 && nbStattions == nbStationsMin )
+  sortir "AVANT PLACEMENT"
+   i = 0
+   while ( i < nbStations )
+    sortir " - Station "+ i +" : "
+      if( station[i] != 0)
+       // ajouté le type de client
+      sortir stations[i] +" clients."
+      else
+        sortir " pas de client."
+      endif
+i++
+   endwhile
+
+  // affichage de la description de chaque file 
+  // infos nécessaire pour la compréhension des files ?
+  sortir "File de client ordinaire : "+ fileOrdinaire +" client(s)."
+  sortir "File de client prioritaire :"+ filePrioritaire +" client(s) (max : 5)"
+endif
+
+module(nbArrivéesGénéré;x0, a, c, m, tabLoiPoisson;nbArrivées, x0;)
+    module(répartitionArrivée; nbArrivées, x0, a, c, m; fileOrdinaire, filePrio, x0, nbTransformation)
+    nbTransfoClientTot += nbTransformation
+    file += fileOrdinaire
+    filePrioritaire += filePrio
+
+if(nbStattions == nbStationsMin && temps <= 20 ) 
+  sortir "Minutes "+ temps +" : "+ nbArrivées +" arrivées générées."
+// durée ??
+  sortir fileOrdinaire +" clients ordinaires et "+ filePrio +" clients prioritaires." 
+endif
+
+module(repartiClientPrio; stations, x0, a, c, m, tempsInnocupé; stations, filePrioritaires, x0, temspInnocupé)
+
+module(repartiClient; stations, x0, a, c, m, tempsInnocupé; stations, file, filePrioritaires, x0, temspInnocupé)
+  
+// additionne le nombre de client de chaque type pour avoir le temps d'attente de chaque type de client
+  filePrioCumulée += filePrioritaire
+  fileCumulée += file
+
+if( nbStattions == nbStationsMin && temps <= 20 )
+  sortir "APRÈS PLACEMENT"
+   i = 0
+   while ( i < nbStations )
+    sortir " - Station "+ i +" : "
+      if( station[i] != 0)
+       // ajouté le type de client
+      sortir stations[i] +" clients."
+      else
+        sortir " pas de client."
+      endif
+i++
+   endwhile
+
+  // affichage de la description de chaque file 
+  // infos nécessaire pour la compréhension des files ?
+  sortir "File de client ordinaire : "+ fileOrdinaire +" client(s)."
+  sortir "File de client prioritaire :"+ filePrioritaire +" client(s) (max : 5)"
+endif
+
+    temps ++
+  endwhile
+
+// différents coûts à calculer
+sortir "Coûts pour "+ nbStations +" stations."
+module(afficheCout; fileCumulée, filePrioCumulée, nbTransfoClientTot, tempsInnocupéTot; total)
+
+// le nombre de station minimum n'est pas forcement 0
+// => on soustrais le nombre de station minimum du nombre de station pour avoir un indice de 0 à nbMaxStations - nbStations
+couts[nbStations - nbStationsMin] = total
+
+  nbStations ++
+module(rechercheCoutMin;couts;nbStationsOptimal)
+endwhile
+------
+
+module(initStations;nbStations;stations)
+---*
+i = 0
+while (i < nbStations)
+stations[i] = 0
+i++
+endwhile
+------
+
+module(nbArrivéesGénéré;x0, a, c, m, tabLoiPoisson;nbArrivées, x0;)
+---*
+module(génèreUN;x0, a, c, m;un, x0)
+
+if (un < tabPoisson[0])
+  nbArrivées = 0
+else if (un < tabPoisson[1])
+  nbArrivées = 1
+else if (un < tabPoisson[2])
+  nbArrivées = 2
+else if (un < tabPoisson[3])
+  nbArrivées = 3
+else if (un < tabPoisson[4])
+  nbArrivées = 4
+else if (un < tabPoisson[5])
+  nbArrivées = 5
+else if (un < tabPoisson[6])
+  nbArrivées = 6
+else
+  nbArrivées = 7
+endif
+------
+
+module(génèreUN;x0, a, c, m;un, x0)
+---*
+x1 = (a * x0 + c) %m
+un = x1/m
+x0 = x1
+------
+
+module(répartitionArrivée; nbArrivées, x0, a, c, m; fileOrdinaire, filePrio, x0, nbTransformation)
+---*
+fileOrdinaire = 0
+filePrio = 0
+nbTransformation = 0
+
+i = 0
+while (i < nbArrivées )
+module(génèreUN;x0, a, c, m;un, x0)
+if (un < TAUX_PRIORITAIRE )
+  if ( filePrio <= MAX_PRIORITAIRE FILE )
+   filePrio++
+  else
+  // gestion cout sup
+  nbTransformation++
+   fileOrdinaire++
+  endif
+else
+ fileOrdinaire++
+endif
+i++
+endwhile
+------
+
+module(repartiClientPrio; stations, x0, a, c, m, tempsInnocupé; stations, filePrioritaires, x0, temspInnocupé)
+---*
+filePrioritaire = 0
+// traitement du client prioritaire (stations num 1)  
+// regarde si la station est libre      
+  if( stations[0] == 0 )
+  // si elle est libre, regarde si un client attend dans la file
+    if (filePrioritaire != 0)
+     // génère le temps pour le client, l'enlève de la file et l'ajoute dans la station
+          filePrioritaire --
+          module(duréeGénérée;x0, a, c, m, stations, 0;stations, x0)
+      // enlève une minute de traitement
+        stations[0] --
+      else
+      tempsInnocupéTot++
+      endif
+    else
+      stations[0]--
+    endif
+------
+
+module(repartiClient; stations, x0, a, c, m, tempsInnocupé; stations, file, x0, temspInnocupé)
+---*
+file = 0
+// regarde chaque station pour 
+  // - ajouter un client de la file si la station est libre
+  // - enlever une minute de traitement de chaque station
+    i = 1
+    while (i <= nbStations)
+// regarde si la est station libre (temps d'attente de 0 )
+      if (stations[i] == 0)
+// regarde si un client est dans la file
+// client dans la file prioritaire ont la priorité quand une station est vide
+      if( filePrioritaire != 0)
+          filePrioritaire --
+          module(duréeGénérée;x0, a, c, m, stations, i;stations, x0)
+        stations[i] --
+      else
+        if (file != 0)
+          file --
+          module(duréeGénérée;x0, a, c, m, stations, i;stations, x0)
+        stations[i] --
+       else
+        tempsInnocupéTot++
+        endif
+     else
+      stations[i] --
+     endif
+endif
+i++    
+endwhile
+------
+
+module(duréeGénérée;x0, a, c, m, stations, ind;stations, x0)
+---*
+module(génèreUN;x0, a, c, m;un, x0)
+
+if (un < 0.305) 
+   T = 1
+  if (un < 0.661)
+    T = 2
+  if (un < 0.915)
+    T = 3
+if (un < 0.966) 
+   T = 4  
+  if (un < 0.983)
+    T = 5
+  else
+    T = 6
+
+endif
+endif
+endif
+endif
+endif
+x0 = x1
+stations[ind] = T
+------
+
+module(rechercheCoutMin;couts;nbStationsOptimal)
+---*
+i = 1
+coutMin = couts[0]
+iStationOpti = 0
+while ( i < couts.length)
+  if( couts[i] < coustMin)
+    coutMin = couts[i]
+    iStationOpti = i
+  endif 
+i++
+endwhile
+nbStationsOptimal = iStationOpti + nbStationsMin
+------
+
+module(afficheCout; fileCumulée, filePrioCumulée, nbTransfoClientTot;)
+---*
+total = 0
+  coutsPrésenceDansSysOrdinaire = fileCumulée / 60 * COUT_1H_ORDINAIRE 
+sortir "cout de présence dans le système : "+ coutsPrésenceDansSysOrdinaire
+total += coutsPrésenceDansSysOrdinaire
+
+  coutsPrésenceDansSysPrio = filePrioCumulée / 60 * COUT_1H_PRIORITAIRE
+sortir "cout de présence dans le système ( client prioritaire): "+ coutsPrésenceDansSysPrio
+total += coutsPrésenceDansSysPrio
+
+  coutOccupationStationClassique = fileCumulée / 60 * COUT_1H_STATION_ORDINAIRE
+sortir "cout d'occupation de station : "+ coutOccupationStationClassique
+total += coutOccupationStationClassique
+
+  coutOccupationStationPrio = filePrioCumulée / 60 * COUT_1H_STATION_PRIORITÈRE
+sortir "cout d'occupation de station ( client prioritaire ): "+ coutOccupationStationPrio
+total += coutOccupationStationPrio
+
+  coutTransformationClient = nbTransfoClientTot * COUT_TRANSFORMATION_CLIENT_PRIO_VERS_ORDINAIRE
+sortir "cout de transformation de client classique vers prioritaire : "+ coutTransformationClient
+total += coutTransformationClient
+
+  coutInnocupation = tempsInnocupéTot / 60 * COUT_1H_STATION_INOCCUPÉE
+sortir "cout d'innocupation d'une station : "+ coutInnocupation
+total += coutInnocupation
+------
