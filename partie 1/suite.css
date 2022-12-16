@@ -6,13 +6,22 @@ body{
 
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6104783599088839) 42%, rgba(0,212,255,1) 100%);
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 .wrapper{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 20px;
+    background-color: rgba(34, 40, 49, 0.8);  
+    border-radius: 50px;  
+    border: 4px solid black;
+
+    color: #EEEEEE;
+    backdrop-filter: blur(10px);
 }
 table{
     padding: 10px 0px;
@@ -48,32 +57,38 @@ input{
     overflow: scroll;
     max-height: 500px;
     padding: 0px 10px;
-    scrollbar-color: rebeccapurple transparent;
+    scrollbar-color: #EEEEEE transparent;
     scrollbar-width: thin;
 }
 /* ligne des titres reste quand on scroll */
 th {
     position: sticky; 
     top: 0; 
-    z-index: 1;        
+    z-index: 1;    
+    color: black;    
 }
 /* couleur des cases */
 .index{
     font-weight: bold;
 }
 tr:nth-child(odd){
-    background-color: lightskyblue;
+    background-color: #393E46;
 }
 tr:nth-child(even){
-    background-color: lightcyan;
+    background-color: #00ADB5;
+    color: black;
 }
 
 tr:hover{
-    background-color: #ffcc99;
+    background-color: #5C2E7E;
+    color: white;
     scale: 1.05;
 }
 th{
-    background-color: #e6e6e6;
+    background-color: #222831;
+    margin: -10px;
+    color: #EEEEEE;
+    border: none;
 }
 
 /* styles pour les sortie de tests */
