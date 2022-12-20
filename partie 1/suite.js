@@ -255,11 +255,11 @@ function testCourse(){
         course.push({
             "Course" : i,
             "Ri" : 0,
-            "Pi" : (1 / (i + 1)).toFixed(5),
         });
     }
 
     //compte la taille de course
+    let nbJumps = 1;
     let jumpSize = 1;
     for(let i = 1; i < suite.length; i++){
         if(suite[i]["Xn"] > suite[i-1]["Xn"]){
@@ -269,18 +269,27 @@ function testCourse(){
             course[jumpSize-1]["Ri"]++;
             jumpSize = 1;
             // passe un nombre pour éviter le couplage entre les courses
-            i++;
+            i += 1;
+            nbJumps++;
         }
     }
+
+    let i = course.length - 1;
+    while( i >= 0 && course[i]["Ri"] === 0){
+        course.pop();
+        i--;
+    }
+
     course.forEach(x => {
-        x["nPi"] = x["Pi"] * suite.length;
+        x["Pi"] = (i / factorial(i + 1)),
+        x["nPi"] = x["Pi"] * nbJumps;
         x["(Ri - nPi)² / nPi"] = Math.pow(x["Ri"] - x["nPi"], 2) / x["nPi"];
     });
     //course = course.filter(x => x["Ri"] !== 0);
 
     totaux = {
         "Course": "Total",
-        "Ri": "",
+        "Ri": "n = " + nbJumps,
         "Pi": "",
         "nPi": "",
         "(Ri - nPi)² / nPi": 0
@@ -290,6 +299,13 @@ function testCourse(){
     });
     course.push(totaux);
     afficheEtapes("course", "Course", course);
+}
+
+function factorial(n){
+    if(n === 0){
+        return 1;
+    }
+    return n * factorial(n-1);
 }
 
 function afficheEtapes(testName, firstColumnName, tab){
@@ -336,9 +352,9 @@ function afficheEtapes(testName, firstColumnName, tab){
     validityTest.innerHTML += createTalbe(tabRegrouped, "courseTable");
 
     validityTest.innerHTML += "<h2>Étape 5: </h2>";
-    validityTest.innerHTML += `<p>Degrés de liberté :  ${tabRegrouped.length - 1}</p>`;
+    validityTest.innerHTML += `<p>Degrés de liberté :  ${tabRegrouped.length - 2}</p>`;
 
     validityTest.innerHTML += "<h2>Étape 6: </h2>";
     validityTest.innerHTML += `<p>Décision : comparé ${tabRegrouped[tabRegrouped.length-1]["(Ri - nPi)² / nPi"]}
-                               <br> à la valeur dans le tableau avec un indice de liberté de ${tabRegrouped.length - 1}</p>`;
+                               <br> à la valeur dans le tableau avec un indice de liberté de ${tabRegrouped.length - 2}</p>`;
 }
