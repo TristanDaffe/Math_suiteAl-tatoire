@@ -96,8 +96,8 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
             filePrioritaire = resRepartitionClient.filePrioritaire;
 
             // additionne le nombre de client de chaque type pour avoir le temps d'attente de chaque type de client
-            filePrioritaireCumulée += filePrioritaire;
-            fileCumulée += file;
+            filePrioritaireCumulée += resRepartitionClient.filePrioritaire;
+            fileCumulée += resRepartitionClient.file;
             if (nbStations == nbStationsMin && temps <= 20){
                 console.log("\tAPRÈS PLACEMENT");
                 for(let i = 0; i < nbStations; i++){
