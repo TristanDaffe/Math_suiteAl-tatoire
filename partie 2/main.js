@@ -1,5 +1,6 @@
 function init () {
-    nbStationsOptimal(2, 10, 600, 19, 61, 49, 1024)
+    nbStationsOptimal(2, 100,     600,      4, 75, 74,65537)
+//nbStationsMin, nbStationsMax, tempsSimu, x0, a, c,  m
 }
 
 window.onload = init;
@@ -84,9 +85,6 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
             x0 = resRépartition.x0;
             tempsInnocupéTot += resRépartition.tempsInnocupé;
             filePrioritaire = resRépartition.filePrio;
-
-            // WARNING
-            // A partir d'ici c'est Benjamin qui fait le code donc c'est peut être pas bon
 
             // répartition des clients ordinaires dans les stations
             const resRepartitionClient = repartiClient(stations, file, filePrioritaire, x0, a, c, m);

@@ -5,6 +5,8 @@ let validityTest;
 let suite;
 let suiteValide = false;
 
+const alpha = 0.05;
+
 window.onload = init;
 function init(){
     // réupère les références vers les champs de saisie
@@ -316,7 +318,7 @@ function afficheEtapes(testName, firstColumnName, tab){
     validityTest.innerHTML += "<p>H1: la suite n'est pas acceptable </p>";
 
     validityTest.innerHTML += "<h2>Étape 2: </h2>";
-    validityTest.innerHTML += "<p>𝛼 = 5%</p>";
+    validityTest.innerHTML += "<p>𝛼 = "+ alpha +"</p>";
 
     validityTest.innerHTML += "<h2>Étape 3: </h2>";
     validityTest.innerHTML += createTalbe(tab, testName);
