@@ -1,5 +1,5 @@
 function init () {
-    nbStationsOptimal(2, 43,     600,      4, 75, 74, 65537)
+    nbStationsOptimal(2, 43,     600,      4, 75, 74,65537)
 //nbStationsMin, nbStationsMax, tempsSimu, x0, a, c,  m
 }
 
@@ -46,7 +46,7 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
         initStations(stations, nbStations);
 
         for(let temps = 1; temps <= tempsSimu; temps++){
-            // affichage des états de chawue stations pour les 20 premières minutes du nombre de station min
+            // affichage des états de chaque stations pour les 20 premières minutes du nombre de station min
             if( temps <= 20 && nbStations == nbStationsMin ){
                 console.log("Minutes "+ temps +" :")
                 console.log("\tAVANT PLACEMENT");
@@ -112,7 +112,7 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
                     console.log(message);
                 }
                  // affichage de la description de chaque file
-                 // infos nécessaire pour la compréhension des files ?
+                 // infos nécessaires pour la compréhension des files ?
                 console.log("\t\tFile de client ordinaire : "+ file +" client(s).");
                 console.log("\t\tFile de client prioritaire : "+ filePrioritaire +" client(s) (max : 5)");
             }
@@ -122,7 +122,7 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
         const total = calculCouts(tempsInnocupéTot, tempsTraitements, tempsTraitementsPrio, nbTransfoClientTot);
         console.log("    Coût total : "+ total +"€.");
         // le nombre de station minimum n'est pas forcement 0
-        // ⇒ on soustrais le nombre de station minimum du nombre de station pour avoir un indice de 0 à nbMaxStations - nbStations
+        // ⇒ on soustrait le nombre de stations minimum du nombre de stations pour avoir un indice de 0 à nbMaxStations - nbStations
         couts[nbStations - nbStationsMin] = total;
     }
     const nbOptimalStations = rechercheCoutMin(couts, nbStationsMin, nbStationsMax);
@@ -209,9 +209,9 @@ function repartiClientPrio(stations, filePrio, x0, a, c, m){
 
 // réparti les clients dans les stations
 function repartiClient(stations, file, filePrioritaire, x0, a, c, m){
-    // parcour le tableau de station pour
+    // parcourt le tableau de station pour
     // - regarder si une station est libre (== 0)
-    // => si oui, génère une durée pour un client si il attend dans la file 
+    // => si oui, génère une durée pour un client s'il attend dans la file 
     //      , l'ajoute à la station et enlève un client de la file
     // - enlève une minute de traitement de chaque station
     let tempsInnocupé = 0;
