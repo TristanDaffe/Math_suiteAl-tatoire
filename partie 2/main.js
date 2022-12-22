@@ -1,10 +1,9 @@
 function init () {
-    nbStationsOptimal(2, 100,     600,      4, 75, 74,65537)
+    nbStationsOptimal(2, 43,     600,      4, 75, 74,65537)
 //nbStationsMin, nbStationsMax, tempsSimu, x0, a, c,  m
 }
 
 window.onload = init;
-
 /*----------------------------------------------*/
 /*                   Constantes                 */
 /*----------------------------------------------*/
@@ -37,11 +36,13 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
     for( let nbStations = nbStationsMin; nbStations <= nbStationsMax; nbStations++){
         let file = 0,
             filePrioritaire = 0,
-            fileCumulée = 0,
-            filePrioritaireCumulée = 0,
             nbTransfoClientTot = 0,
-            tempsInnocupéTot = 0;
+            tempsInnocupéTot = 0
+            tempsTraitements = 0
+            tempsTraitementsPrio = 0;
         let stations = [];
+        let nbClientsTot = 0;
+        
         initStations(stations, nbStations);
 
         for(let temps = 1; temps <= tempsSimu; temps++){
@@ -67,13 +68,15 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
             // génération des arrivées
             const resArrivées = génèreArrivées(x0, a, c, m, tabPoisson);
             x0 = resArrivées.x0;
+
             // répartition des arrivées entre prioritaire et ordinaire
-            const resRépartitionPrio = répartitionArrivée(resArrivées.nbArrivées, x0, a, c, m );
+            const resRépartitionPrio = répartitionArrivée(resArrivées.nbArrivées, filePrioritaire, x0, a, c, m );
             // ajoute les clients générés à la file correspondante
             file = resRépartitionPrio.fileOrdinaire;
-            filePrioritaire += resRépartitionPrio.filePrio;
+            filePrioritaire = resRépartitionPrio.filePrio;
             nbTransfoClientTot += resRépartitionPrio.nbTransformation;
             x0 = resRépartitionPrio.x0;
+            nbClientsTot += resArrivées.nbArrivées;
             // affichage pour les 20 première minutes du nombre de station min
             if( temps <= 20 && nbStations === nbStationsMin ){
                 console.log('\t\tMinutes '+ temps +' : '+ resArrivées.nbArrivées +' arrivées générées.');
@@ -84,18 +87,18 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
             const resRépartition = repartiClientPrio(stations, filePrioritaire, x0, a, c, m);
             x0 = resRépartition.x0;
             tempsInnocupéTot += resRépartition.tempsInnocupé;
+            tempsTraitementsPrio += resRépartition.tempsTraitementsPrio;
             filePrioritaire = resRépartition.filePrio;
 
             // répartition des clients ordinaires dans les stations
             const resRepartitionClient = repartiClient(stations, file, filePrioritaire, x0, a, c, m);
             x0 = resRepartitionClient.x0;
             tempsInnocupéTot += resRepartitionClient.tempsInnocupé;
+            tempsTraitements += resRepartitionClient.tempsTraitements;
+            tempsTraitementsPrio += resRepartitionClient.tempsTraitementsPrio;
             file = resRepartitionClient.file;
             filePrioritaire = resRepartitionClient.filePrioritaire;
 
-            // additionne le nombre de client de chaque type pour avoir le temps d'attente de chaque type de client
-            filePrioritaireCumulée += resRepartitionClient.filePrioritaire;
-            fileCumulée += resRepartitionClient.file;
             if (nbStations == nbStationsMin && temps <= 20){
                 console.log("\tAPRÈS PLACEMENT");
                 for(let i = 0; i < nbStations; i++){
@@ -115,8 +118,9 @@ function nbStationsOptimal(nbStationsMin, nbStationsMax, tempsSimu, x0, a, c, m)
             }
         }
         // différents coûts à calculer
-        console.log("Coûts pour "+ nbStations +" stations.");
-        const total = calculCouts(fileCumulée, filePrioritaireCumulée, tempsInnocupéTot, nbTransfoClientTot);
+        console.log("Coûts pour "+ nbStations +" stations.  - "+ nbClientsTot +" clients générés.");
+        const total = calculCouts(tempsInnocupéTot, tempsTraitements, tempsTraitementsPrio, nbTransfoClientTot);
+        console.log("    Coût total : "+ total +"€.");
         // le nombre de station minimum n'est pas forcement 0
         // ⇒ on soustrais le nombre de station minimum du nombre de station pour avoir un indice de 0 à nbMaxStations - nbStations
         couts[nbStations - nbStationsMin] = total;
@@ -137,7 +141,6 @@ function initStations(stations, nbStations){
 function génèreArrivées(x0, a, c, m){
     let {un, x0N} = génèreUN(x0, a, c, m);
     x0 = x0N;
-
     let nbArrivées = 0;
     while(nbArrivées < tabPoisson.length -1 && un > tabPoisson[nbArrivées]){
         nbArrivées++;
@@ -156,9 +159,8 @@ function génèreUN(x0N, a, c, m){
 }
 
 // répartition des arrivées entre file ordinaire et file prioritaire
-function répartitionArrivée(nbArrivées, x0, a, c, m){
+function répartitionArrivée(nbArrivées, filePrio, x0, a, c, m){
     let fileOrdinaire = 0,
-        filePrio = 0,
         nbTransformation = 0;
 
     for(let i = 0; i < nbArrivées; i++){
@@ -182,6 +184,7 @@ function répartitionArrivée(nbArrivées, x0, a, c, m){
 // traitement du client prioritaire
 function repartiClientPrio(stations, filePrio, x0, a, c, m){
     let tempsInnocupé = 0;
+    let tempsTraitementsPrio = 0;
     // regarde si la station est libre
     if(stations[0] === 0){
         // si elle est libre, regarde si un client attend dans la file
@@ -190,6 +193,7 @@ function repartiClientPrio(stations, filePrio, x0, a, c, m){
             filePrio--;
             x0 = génèreDurée(x0, a, c, m, stations, 0);
             // enlève une minute de traitement
+            tempsTraitementsPrio+= stations[0]
             stations[0]--;
         }else{
             // si aucune file n'est remplie, ajoute un temps d'innocupation pour les couts
@@ -200,7 +204,7 @@ function repartiClientPrio(stations, filePrio, x0, a, c, m){
         stations[0]--;
     }
     // stations passé par référence (pas besoin de le retourner)
-    return {x0, filePrio, tempsInnocupé};
+    return {x0, filePrio, tempsInnocupé, tempsTraitementsPrio};
 }
 
 // réparti les clients dans les stations
@@ -211,6 +215,8 @@ function repartiClient(stations, file, filePrioritaire, x0, a, c, m){
     //      , l'ajoute à la station et enlève un client de la file
     // - enlève une minute de traitement de chaque station
     let tempsInnocupé = 0;
+    let tempsTraitements = 0;
+    let tempsTraitementsPrio = 0;
     // pas 0 car la station 0 est résevé au client prioritaire
     for(let i = 1; i < stations.length; i++){
         if(stations[i] === 0){
@@ -220,12 +226,14 @@ function repartiClient(stations, file, filePrioritaire, x0, a, c, m){
                 filePrioritaire--;
                 // génère une durée pour le client et l'ajoute à la station
                 x0 = génèreDurée(x0, a, c, m, stations, i);
+                tempsTraitementsPrio += stations[i]
                 // enlève une minute
                 stations[i]--;
             }else if(file !== 0){
                 // regarde si un client est dans la file ordinaire
                 file--;
                 x0 = génèreDurée(x0, a, c, m, stations, i);
+                tempsTraitements+= stations[i]
                 stations[i]--;
             }else{
                 // si aucune file n'est remplie, ajoute un temps d'innocupation pour les couts 
@@ -238,7 +246,7 @@ function repartiClient(stations, file, filePrioritaire, x0, a, c, m){
         }   
     }
     // stations passé par référence (pas besoin de le retourner)
-    return {x0, file, filePrioritaire, tempsInnocupé};
+    return {x0, file, filePrioritaire, tempsInnocupé, tempsTraitements, tempsTraitementsPrio};
 }
 
 // génère une durée
@@ -282,22 +290,22 @@ function rechercheCoutMin(couts, nbStationsMin){
 }
 
 // calcul les couts et affiches les détails
-function calculCouts (fileCumulée, filePrioCumulée, tempsInnocupéTot, nbTransfoClientTot) {
+function calculCouts (tempsInnocupéTot, tempsTraitement, tempsTraitementsPrio, nbTransfoClientTot) {
     let total = 0;
 
-    let coutsPrésenceDansSysOrdinaire = fileCumulée / 60 * COUT_1H_ORDINAIRE;
+    let coutsPrésenceDansSysOrdinaire = (tempsTraitement) / 60 * COUT_1H_ORDINAIRE;
     console.log("\tcout de présence dans le système : "+ coutsPrésenceDansSysOrdinaire);
     total += coutsPrésenceDansSysOrdinaire;
 
-    let coutsPrésenceDansSysPrio = filePrioCumulée / 60 * COUT_1H_PRIORITAIRE;
+    let coutsPrésenceDansSysPrio = (tempsTraitement) / 60 * COUT_1H_PRIORITAIRE;
     console.log("\tcout de présence dans le système ( client prioritaire): "+ coutsPrésenceDansSysPrio);
     total += coutsPrésenceDansSysPrio;
 
-    let coutOccupationStationClassique = fileCumulée / 60 * COUT_1H_STATION_ORDINAIRE;
+    let coutOccupationStationClassique = tempsTraitement / 60 * COUT_1H_STATION_ORDINAIRE;
     console.log("\tcout d'occupation de station : "+ coutOccupationStationClassique);
     total += coutOccupationStationClassique;
 
-    let coutOccupationStationPrio = filePrioCumulée / 60 * COUT_1H_STATION_PRIORITÈRE;
+    let coutOccupationStationPrio = tempsTraitementsPrio / 60 * COUT_1H_STATION_PRIORITÈRE;
     console.log("\tcout d'occupation de station ( client prioritaire ): "+ coutOccupationStationPrio);
     total += coutOccupationStationPrio;
 
