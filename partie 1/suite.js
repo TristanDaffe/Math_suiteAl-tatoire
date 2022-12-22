@@ -357,6 +357,6 @@ function afficheEtapes(testName, firstColumnName, tab){
     validityTest.innerHTML += `<p>Degrés de liberté :  ${tabRegrouped.length - 2}</p>`;
 
     validityTest.innerHTML += "<h2>Étape 6: </h2>";
-    validityTest.innerHTML += `<p>Décision : comparé ${tabRegrouped[tabRegrouped.length-1]["(Ri - nPi)² / nPi"]}
+    validityTest.innerHTML += `<p>Décision : comparer ${tabRegrouped[tabRegrouped.length-1]["(Ri - nPi)² / nPi"]}
                                <br> à la valeur dans le tableau avec un indice de liberté de ${tabRegrouped.length - 2}</p>`;
 }
