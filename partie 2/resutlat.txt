@@ -1,0 +1,598 @@
+Minutes 1 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 1 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 2 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 2 : 1 arrivées générées.  
+		0 clients ordinaires et 1 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 3 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 3 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 3 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 3 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 2 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 4 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 2 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 4 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 1 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 5 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 1 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 5 : 2 arrivées générées.  
+		1 clients ordinaires et 1 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 2 minutes restantes.  
+		File de client ordinaire : 1 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 6 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 2 minutes restantes.  
+		File de client ordinaire : 1 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 6 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 1 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 7 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 1 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 7 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 8 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 8 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 9 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 9 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 10 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 10 : 1 arrivées générées.  
+		0 clients ordinaires et 1 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 2 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 11 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 2 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 11 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 1 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 12 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 1 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 12 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 13 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 13 : 2 arrivées générées.  
+		0 clients ordinaires et 2 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 2 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 14 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 2 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 14 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 1 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 15 :  
+	AVANT PLACEMENT  
+	- Stations 1 : 1 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 15 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 16 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 16 : 1 arrivées générées.  
+		1 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 3 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 17 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 3 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 17 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 2 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 18 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 2 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 18 : 0 arrivées générées.  
+		0 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 1 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 19 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : 1 minutes restantes.  
+		File de client ordinaire : 0 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 19 : 1 arrivées générées.  
+		1 clients ordinaires et 0 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 1 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Minutes 20 :  
+	AVANT PLACEMENT  
+	- Stations 1 : pas de client.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 1 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+		Minutes 20 : 4 arrivées générées.  
+		3 clients ordinaires et 1 clients prioritaires.  
+	APRÈS PLACEMENT  
+	- Stations 1 : 4 minutes restantes.  
+	- Stations 2 : pas de client.  
+		File de client ordinaire : 2 client(s).  
+		File de client prioritaire : 0 client(s) (max : 5)  
+Coûts pour 2 stations.  - 337 clients générés.  
+	cout de présence dans le système : 123.75  
+	cout de présence dans le système ( client prioritaire): 198  
+	cout d'occupation de station : 247.5  
+	cout d'occupation de station ( client prioritaire ): 195  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 249.33333333333334  
+    Coût total : 1013.5833333333334€.  
+Coûts pour 3 stations.  - 363 clients générés.  
+	cout de présence dans le système : 128.33333333333334  
+	cout de présence dans le système ( client prioritaire): 205.33333333333334  
+	cout d'occupation de station : 256.6666666666667  
+	cout d'occupation de station ( client prioritaire ): 221.25  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 438.33333333333337  
+    Coût total : 1249.9166666666667€.  
+Coûts pour 4 stations.  - 346 clients générés.  
+	cout de présence dans le système : 151.66666666666666  
+	cout de présence dans le système ( client prioritaire): 242.66666666666666  
+	cout d'occupation de station : 303.3333333333333  
+	cout d'occupation de station ( client prioritaire ): 166.25  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 635  
+    Coût total : 1498.9166666666665€.  
+Coûts pour 5 stations.  - 351 clients générés.  
+	cout de présence dans le système : 146.25  
+	cout de présence dans le système ( client prioritaire): 234  
+	cout d'occupation de station : 292.5  
+	cout d'occupation de station ( client prioritaire ): 217.5  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 825  
+    Coût total : 1715.25€.  
+Coûts pour 6 stations.  - 345 clients générés.  
+	cout de présence dans le système : 154.58333333333334  
+	cout de présence dans le système ( client prioritaire): 247.33333333333334  
+	cout d'occupation de station : 309.1666666666667  
+	cout d'occupation de station ( client prioritaire ): 176.25  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 1029.3333333333335  
+    Coût total : 1916.666666666667€.  
+Coûts pour 7 stations.  - 324 clients générés.  
+	cout de présence dans le système : 160.41666666666669  
+	cout de présence dans le système ( client prioritaire): 256.6666666666667  
+	cout d'occupation de station : 320.83333333333337  
+	cout d'occupation de station ( client prioritaire ): 157.5  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 1231  
+    Coût total : 2126.416666666667€.  
+Coûts pour 8 stations.  - 438 clients générés.  
+	cout de présence dans le système : 182.91666666666666  
+	cout de présence dans le système ( client prioritaire): 292.66666666666663  
+	cout d'occupation de station : 365.8333333333333  
+	cout d'occupation de station ( client prioritaire ): 286.25  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 1377.3333333333333  
+    Coût total : 2505€.  
+Coûts pour 9 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 1550  
+    Coût total : 2787.5€.  
+Coûts pour 10 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 1750  
+    Coût total : 2987.5€.  
+Coûts pour 11 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 1950  
+    Coût total : 3187.5€.  
+Coûts pour 12 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 2150  
+    Coût total : 3387.5€.  
+Coûts pour 13 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 2350  
+    Coût total : 3587.5€.  
+Coûts pour 14 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 2550  
+    Coût total : 3787.5€.  
+Coûts pour 15 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 2750  
+    Coût total : 3987.5€.  
+Coûts pour 16 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 2950  
+    Coût total : 4187.5€.  
+Coûts pour 17 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 3150  
+    Coût total : 4387.5€.  
+Coûts pour 18 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 3350  
+    Coût total : 4587.5€.  
+Coûts pour 19 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 3550  
+    Coût total : 4787.5€.  
+Coûts pour 20 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 3750  
+    Coût total : 4987.5€.  
+Coûts pour 21 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 3950  
+    Coût total : 5187.5€.  
+Coûts pour 22 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 4150  
+    Coût total : 5387.5€.  
+Coûts pour 23 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 4350  
+    Coût total : 5587.5€.  
+Coûts pour 24 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 4550  
+    Coût total : 5787.5€.  
+Coûts pour 25 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 4750  
+    Coût total : 5987.5€.  
+Coûts pour 26 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 4950  
+    Coût total : 6187.5€.  
+Coûts pour 27 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 5150  
+    Coût total : 6387.5€.  
+Coûts pour 28 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 5350  
+    Coût total : 6587.5€.  
+Coûts pour 29 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 5550  
+    Coût total : 6787.5€.  
+Coûts pour 30 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 5750  
+    Coût total : 6987.5€.  
+Coûts pour 31 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 5950  
+    Coût total : 7187.5€.  
+Coûts pour 32 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 6150  
+    Coût total : 7387.5€.  
+Coûts pour 33 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 6350  
+    Coût total : 7587.5€.  
+Coûts pour 34 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 6550  
+    Coût total : 7787.5€.  
+Coûts pour 35 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 6750  
+    Coût total : 7987.5€.  
+Coûts pour 36 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 6950  
+    Coût total : 8187.5€.  
+Coûts pour 37 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 7150  
+    Coût total : 8387.5€.  
+Coûts pour 38 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 7350  
+    Coût total : 8587.5€.  
+Coûts pour 39 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 7550  
+    Coût total : 8787.5€.  
+Coûts pour 40 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 7750  
+    Coût total : 8987.5€.  
+Coûts pour 41 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 7950  
+    Coût total : 9187.5€.  
+Coûts pour 42 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 8150  
+    Coût total : 9387.5€.  
+Coûts pour 43 stations.  - 500 clients générés.  
+	cout de présence dans le système : 187.5  
+	cout de présence dans le système ( client prioritaire): 300  
+	cout d'occupation de station : 375  
+	cout d'occupation de station ( client prioritaire ): 375  
+	cout de transformation de client classique vers prioritaire : 0  
+	cout d'innocupation d'une station : 8350  
+    Coût total : 9587.5€.  
+
+Le nombre optimal de stations est de 2 pour un coût de 1013.5833333333334€.  
