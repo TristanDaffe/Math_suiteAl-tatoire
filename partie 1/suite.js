@@ -9,13 +9,13 @@ const alpha = 0.05;
 
 window.onload = init;
 function init(){
-    // réupère les références vers les champs de saisie
+    // récupère les références vers les champs de saisie
     aField = document.getElementById("a");
     mField = document.getElementById("m");
     cField = document.getElementById("c");
     x0Field = document.getElementById("X0");
 
-    // réupère la référence vers la zone de sortie pour le tableau
+    // récupère la référence vers la zone de sortie pour le tableau
     periode = document.getElementById("periode");
     table = document.getElementById("resultTable");
     output = document.getElementById("output");
@@ -33,7 +33,7 @@ function generateTest(fun){
 }
 
 // partie 0 : fonction de création d'un tableau avec un id
-// array est un tableau d'objet avec les clés et valeur (les valeurs des clés sont utilisés pour la génération des titres)
+// array est un tableau d'objet avec les clés et valeurs (les valeurs des clés sont utilisés pour la génération des titres)
 function createTalbe(array, id){
     let output = "";
 
@@ -117,7 +117,7 @@ function generateSequence(){
 }
 
 function showError(){
-    // met un message d'erreur et enlève les ancienne sortie
+    // met un message d'erreur et enlève les anciennes sorties
     output.innerHTML = "Erreur : les valeurs saisies ne sont pas valides";
     validityTest.innerHTML = "";
 }
@@ -134,7 +134,7 @@ function testFrequence(taille = suite.length / 2){
     validityTest.innerHTML += createTalbe(frequence, "frequenceTable");
 }
 function generateFrequenceTable(taille){
-        // parcour la suite pour compter le nombre de fois que chaque valeur apparait dans la colonne Yn
+        // parcourt la suite pour compter le nombre de fois que chaque valeur apparait dans la colonne Yn
         let frequence = [];
 
         for(let i = 0; i < 10; i++){
