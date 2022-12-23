@@ -1,5 +1,5 @@
 function init () {
-    nbStationsOptimal(2, 43,     600,      4, 75, 74, 65537)
+    nbStationsOptimal(5, 43,     600,      4, 75, 74, 65537)
 //nbStationsMin, nbStationsMax, tempsSimu, x0, a, c,  m
 }
 

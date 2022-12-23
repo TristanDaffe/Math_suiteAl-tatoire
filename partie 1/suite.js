@@ -282,10 +282,12 @@ function testCourse(){
         i--;
     }
 
+    let j = 1;
     course.forEach(x => {
-        x["Pi"] = (i / factorial(i + 1)),
+        x["Pi"] = (j / factorial(j + 1)),
         x["nPi"] = x["Pi"] * nbJumps;
         x["(Ri - nPi)² / nPi"] = Math.pow(x["Ri"] - x["nPi"], 2) / x["nPi"];
+        j++;
     });
     //course = course.filter(x => x["Ri"] !== 0);
 
